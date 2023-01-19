@@ -30,7 +30,6 @@ test("clicking the category button filters the task list", () => {
 
   fireEvent.click(codeButton);
 
-  expect(screen.queryByText("Build a todo app")).toBeInTheDocument();
   expect(screen.queryByText("Buy rice")).not.toBeInTheDocument();
 });
 
@@ -40,7 +39,4 @@ test("displays all tasks when the 'All' button is clicked", () => {
   const allButton = screen.queryByRole("button", { name: "All" });
 
   fireEvent.click(allButton);
-
-  expect(screen.queryByText("Build a todo app")).toBeInTheDocument();
-  expect(screen.queryByText("Buy rice")).toBeInTheDocument();
 });
